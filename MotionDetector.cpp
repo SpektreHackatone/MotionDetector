@@ -69,7 +69,7 @@ void MotionDetector::Detect(cv::Mat full_img, int ts, RectsById rects, SignalFun
 
 		last_images[rect.first].push_back(full_img(rect.second).clone());
 
-		if (current_detection_img_num_ == 2) {
+		if (current_detection_img_num_ == 2 && (last_images[rect.first].size() == 3)) {
 			auto motion_img = getImgsDiff(last_images[rect.first][0], last_images[rect.first][1], last_images[rect.first][2]);
 			if (DetectMotion(motion_img))
 				func(rect.first);
@@ -82,7 +82,6 @@ void MotionDetector::Detect(cv::Mat full_img, int ts, RectsById rects, SignalFun
 
 
 	if (current_detection_img_num_ == 2) {
-		//завершение
 		current_detection_img_num_ = 0;
 		detecting_in_progress_ = false;
 		last_proceesed_ts_ = ts;
