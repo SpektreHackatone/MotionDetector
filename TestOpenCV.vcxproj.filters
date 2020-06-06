@@ -21,9 +21,15 @@
     <ClCompile Include="MotionDetector.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="MotionDetectorSingleRect.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MotionDetector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MotionDetectorSingleRect.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
